@@ -1,0 +1,34 @@
+body{
+    margin: 50px;
+}
+
+.box{
+    background-color: blueviolet;
+    height: 300px;
+    width: 300px;
+
+    transition-property: background-color, border-radius;     /*O que a animação irá fazer*/
+    transition-duration: 2s,1s;                               /*Duração da animação*/
+    transition-timing-function:cubic-bezier(.15,.89,.85,.26);
+}
+
+.box:hover{
+    animation: move 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    background-color: orange;
+    border-radius: 50%;
+    
+    /*animation: move 2s;                  /*tempo da animação*/
+    /*animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;          /*Quanto a animação vai acontecer antes de parar*/
+    /*animation-fill-mode: forwards;       /*ultimo momento da animação*/
+    /*animation-delay: 1*/
+}
+
+@keyframes move{
+    from{
+        transform: translateX(0);/*Saindo do eixo X*/
+    }
+    to{
+        transform: translateX(300px);/*Chegada do eixo X*/
+    }
+}
